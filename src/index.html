@@ -7,6 +7,29 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js"></script>
+  <script type="text/javascript">
+
+    var pubnubDemo = new PubNub({
+        publishKey: 'pub-c-32a2b568-29b2-4f30-b79e-ab8af5cd5694',
+        subscribeKey: 'sub-c-20067f22-4580-11e9-b124-064e92ae3637'
+    });
+    pubnubDemo.addListener({
+    message: function(message) {
+        console.log(message)
+    }
+})
+
+pubnubDemo.subscribe({
+    channels: ['tic-tac-toe']
+});
+pubnubDemo.publish({
+    message: {
+        "color" : "blue"
+    },
+    channel: 'tic-tac-toe'
+});
+</script>
 </head>
 <body>
   <app-root></app-root>

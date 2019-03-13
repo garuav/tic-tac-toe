@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+       <div class="col-sm-6 col-md-6 m-5">
+         <div class="row">
+            <div class="col-md-6 text-center">
+                <div class="player-heading" [class.current-player]="displayPlayerTurn">
+                Player 1
+                </div>
+                </div>
+                <div class="col-md-6 text-center">
+                <div class="player-heading"  [class.current-player]="!displayPlayerTurn">
+                Player 2
+                </div>
+                </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 tic-tac-toe">
+                      <table id="game" class="game-grid" #game>
+                          <tr *ngFor="let iterationNumber of gameGrid">
+                          <td *ngFor="let number of iterationNumber"
+                       (click)="play(number)">
+                          {{ renderPlayedText(number)}}
+                          </td>
+                          </tr>
+                          </table>
+                  </div>
+                
+                    <br/>
+         </div>
+          
+       </div>
+    </div>
+  </div>
+</div>

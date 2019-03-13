@@ -1,0 +1,17 @@
+td{
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+}
+.current-player{
+    border-bottom: 5px solid lightgreen;
+}
+.tic-tac-toe{
+    margin-top: 10%;
+    text-align: center;
+    justify-content: space-around;
+    display: flex;
+}
+.player-heading{
+    box-shadow: 3px 3px 8px #a5a1a1;
+}
